@@ -1,15 +1,3 @@
-# 리액트 네모찾기 게임
-
-## TODO 
-
-- [ ] favicon 변경
-- [ ] font 변경
-
-## hooks
-
-### useTimer
-
-```javascript
 import React, {useCallback, useEffect, useRef, useState} from "react";
 
 
@@ -21,7 +9,7 @@ function useTimer(initialTime, ms) {
     const startTimer = useCallback(() => {
         if (intervalRef.current !== null) return;
         intervalRef.current = setInterval(() => {
-            setCount(prev => prev + 1);
+            setCount(prev => prev - 1);
         }, ms)
     }, []);
 
@@ -43,4 +31,3 @@ function useTimer(initialTime, ms) {
 }
 
 export default useTimer;
-```
