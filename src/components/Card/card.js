@@ -1,9 +1,14 @@
 import * as Styled from "./styled";
-import { useEffect } from "react";
 
-const Card = ({ color, size, isWrong, amount }) => {
+const Card = ({ color, size, isWrong, amount, handleClick }) => {
   return (
-    <Styled.Card color={color} size={size} isWrong={isWrong} amount={amount} />
+    <Styled.Card
+      color={color}
+      size={size}
+      isWrong={isWrong}
+      amount={amount}
+      onClick={() => handleClick(isWrong)}
+    />
   );
 };
 

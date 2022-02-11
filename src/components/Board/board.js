@@ -1,12 +1,12 @@
 import Card from "../Card/card";
 import * as Styled from "./styled";
 import { memo, useEffect, useState } from "react";
-const Board = memo(({ size, cell, color, amount }) => {
+const Board = memo(({ stage, size, cell, color, amount, handleClick }) => {
   const [wrongIdx, setWrongIdx] = useState(null);
 
   useEffect(() => {
     setWrongIdx(Math.floor(Math.random() * (cell * cell)));
-  }, []);
+  }, [cell, stage]);
 
   return (
     <Styled.Board size={size}>
@@ -17,6 +17,7 @@ const Board = memo(({ size, cell, color, amount }) => {
           size={size / cell}
           isWrong={wrongIdx === idx}
           amount={amount}
+          handleClick={handleClick}
         />
       ))}
     </Styled.Board>
