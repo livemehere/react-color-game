@@ -44,3 +44,12 @@ function useTimer(initialTime, ms) {
 
 export default useTimer;
 ```
+
+## Technic
+
+### styled-components 의 props사용
+
+### polished 라이브러리 사용
+
+### Array.from(Array()) 사용
+
