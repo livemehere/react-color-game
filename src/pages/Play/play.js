@@ -3,6 +3,7 @@ import useTimer from "../../hooks/useTimer";
 import Board from "../../components/Board/board";
 import * as Styled from "./styled";
 import Stage from "../../components/Stage/stage";
+import useStage from "../../hooks/useStage";
 
 const getRandomColor = () => {
   return `rgb(${Math.floor(Math.random() * 255)},${Math.floor(
@@ -15,7 +16,7 @@ const Play = () => {
     15,
     1000
   );
-  const [stage, setStage] = useState(1);
+  const { stage, animationActive, clearStage, resetStage } = useStage();
   const [size, setSize] = useState(300);
   const [cell, setCell] = useState(3);
   const [color, setColor] = useState(getRandomColor());
@@ -24,7 +25,7 @@ const Play = () => {
   const handleClick = (isWrong) => {
     if (isWrong) {
       // 정답을 선택한 경우
-      setStage((prev) => prev + 1);
+      clearStage();
       setCell((prev) => (Math.random() > 0.5 ? prev + 1 : prev));
       setColor(getRandomColor());
       resetTimer();
@@ -49,7 +50,7 @@ const Play = () => {
 
   return (
     <Styled.Container>
-      <Stage stage={stage} />
+      <Stage stage={stage} animationActive={animationActive} />
       <h1>{count}</h1>
       <Board
         stage={stage}

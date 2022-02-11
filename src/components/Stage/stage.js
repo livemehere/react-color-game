@@ -1,9 +1,13 @@
 import * as Styled from "./styled";
+import { useEffect } from "react";
 
-const Stage = ({ stage }) => {
+const Stage = ({ stage, animationActive }) => {
+  useEffect(() => {
+    console.log(animationActive);
+  }, []);
   return (
     <div>
-      <Styled.Stage>{stage}</Styled.Stage>
+      <Styled.Stage active={animationActive}>{stage}</Styled.Stage>
       <Styled.StageText>스테이지</Styled.StageText>
     </div>
   );
