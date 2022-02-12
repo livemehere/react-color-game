@@ -5,6 +5,8 @@ import * as Styled from "./styled";
 import Stage from "../../components/Stage/stage";
 import useStage from "../../hooks/useStage";
 import Timer from "../../components/Timer/timer";
+import Score from "../../components/Score/score";
+import Modal from "../../components/Modal/modal";
 
 const getRandomColor = () => {
   return `rgb(${Math.floor(Math.random() * 255)},${Math.floor(
@@ -20,6 +22,17 @@ const Play = () => {
   const [cell, setCell] = useState(3);
   const [color, setColor] = useState(getRandomColor());
   const [amount, setAmount] = useState(0.1);
+  const [score, setScore] = useState(0);
+
+  const [open, setOpen] = useState(false);
+  const onOpenModal = () => setOpen(true);
+  const onCloseModal = () => {
+    setOpen(false);
+    resetStage();
+    resetTimer();
+    startTimer();
+    setScore(0);
+  };
 
   const handleClick = (isWrong) => {
     if (isWrong) {
@@ -27,6 +40,7 @@ const Play = () => {
       clearStage();
       setCell((prev) => (Math.random() > 0.5 ? prev + 1 : prev));
       setColor(getRandomColor());
+      setScore((prev) => prev + count * stage);
       resetTimer();
     } else {
       // 오답을 선택한 경우
@@ -42,8 +56,9 @@ const Play = () => {
     if (count <= 0) {
       pauseTimer();
       //TODO: 팝업창 띄우기
+      onOpenModal();
       //TODO: 못찾은 정답 표시해주기 (애니메이션 or amount변경)
-      alert("done!");
+      console.log("done:)");
     }
   }, [count, pauseTimer]);
 
@@ -58,6 +73,13 @@ const Play = () => {
         color={color}
         amount={amount}
         handleClick={handleClick}
+      />
+      <Score score={score} />
+      <Modal
+        score={score}
+        stage={stage}
+        open={open}
+        onCloseModal={onCloseModal}
       />
     </Styled.Container>
   );
