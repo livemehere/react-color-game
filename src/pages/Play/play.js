@@ -19,7 +19,7 @@ const Play = () => {
     useTimer(15, 1000);
   const { stage, animationActive, clearStage, resetStage } = useStage();
   const [size, setSize] = useState(300);
-  const [cell, setCell] = useState(3);
+  const [cell, setCell] = useState(2);
   const [color, setColor] = useState(getRandomColor());
   const [amount, setAmount] = useState(0.1);
   const [score, setScore] = useState(0);
@@ -29,6 +29,7 @@ const Play = () => {
   const onCloseModal = () => {
     setOpen(false);
     resetStage();
+    setCell(2);
     resetTimer();
     startTimer();
     setScore(0);
