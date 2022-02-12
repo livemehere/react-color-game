@@ -5,7 +5,7 @@
 - [ ] favicon 변경
 - [ ] font 변경
 - [ ] 점수 + 점수 애니메이션 
-- [ ] 스테이지 변경 애니메이션
+- [x] 스테이지 변경 애니메이션
 - [ ] 타이머 게이지 애니메이션
 
 ## hooks
@@ -52,7 +52,13 @@ export default useTimer;
 
 ### styled-components 의 props사용
 
-### polished 라이브러리 사용
+### styled-components 의 keyframes 사용
+
+### styled-components & polished 라이브러리 사용
 
 ### Array.from(Array()) 사용
+
+### custom hooks (state를 모듈화해서 사용하기?)
+
+### react에서의 setTimeout, setInterval 의 사용
 

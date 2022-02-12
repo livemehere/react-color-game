@@ -4,6 +4,7 @@ import Board from "../../components/Board/board";
 import * as Styled from "./styled";
 import Stage from "../../components/Stage/stage";
 import useStage from "../../hooks/useStage";
+import Timer from "../../components/Timer/timer";
 
 const getRandomColor = () => {
   return `rgb(${Math.floor(Math.random() * 255)},${Math.floor(
@@ -12,10 +13,8 @@ const getRandomColor = () => {
 };
 
 const Play = () => {
-  const { count, startTimer, pauseTimer, resetTimer, minusTime } = useTimer(
-    15,
-    1000
-  );
+  const { count, startTimer, pauseTimer, resetTimer, minusTime, timeActivity } =
+    useTimer(15, 1000);
   const { stage, animationActive, clearStage, resetStage } = useStage();
   const [size, setSize] = useState(300);
   const [cell, setCell] = useState(3);
@@ -51,7 +50,7 @@ const Play = () => {
   return (
     <Styled.Container>
       <Stage stage={stage} animationActive={animationActive} />
-      <h1>{count}</h1>
+      <Timer count={count} timeActivity={timeActivity} />
       <Board
         stage={stage}
         size={size}

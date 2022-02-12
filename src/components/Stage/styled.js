@@ -1,7 +1,7 @@
 import styled, { keyframes } from "styled-components";
 
 export const Stage = styled.h1`
-  animation: ${(props) => props.active && `scaleDown 0.4s infinite ease`};
+  animation: ${(props) => props.active && `scaleDown 0.4s 1 ease`};
   text-align: center;
   font-size: 56px;
 
