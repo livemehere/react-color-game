@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/static/css/main.e662157a.css",
-    "main.js": "/static/js/main.3a52f12d.js",
-    "index.html": "/index.html",
-    "main.e662157a.css.map": "/static/css/main.e662157a.css.map",
-    "main.3a52f12d.js.map": "/static/js/main.3a52f12d.js.map"
+    "main.css": "/react-color-game/static/css/main.e662157a.css",
+    "main.js": "/react-color-game/static/js/main.c20ebe25.js",
+    "index.html": "/react-color-game/index.html",
+    "main.e662157a.css.map": "/react-color-game/static/css/main.e662157a.css.map",
+    "main.c20ebe25.js.map": "/react-color-game/static/js/main.c20ebe25.js.map"
   },
   "entrypoints": [
     "static/css/main.e662157a.css",
-    "static/js/main.3a52f12d.js"
+    "static/js/main.c20ebe25.js"
   ]
 }
