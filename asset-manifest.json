@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/react-color-game/static/css/main.e662157a.css",
-    "main.js": "/react-color-game/static/js/main.0a2f2210.js",
+    "main.js": "/react-color-game/static/js/main.c20ebe25.js",
     "index.html": "/react-color-game/index.html",
     "main.e662157a.css.map": "/react-color-game/static/css/main.e662157a.css.map",
-    "main.0a2f2210.js.map": "/react-color-game/static/js/main.0a2f2210.js.map"
+    "main.c20ebe25.js.map": "/react-color-game/static/js/main.c20ebe25.js.map"
   },
   "entrypoints": [
     "static/css/main.e662157a.css",
-    "static/js/main.0a2f2210.js"
+    "static/js/main.c20ebe25.js"
   ]
 }
